@@ -18,12 +18,18 @@ public class KadaiFirstController {
 
     // 年、月、日を整数型に変換
     int intYear = Integer.parseInt(year);
-    int intMonth = Integer.parseInt(month);
+    int intMonth = Integer.parseInt(month)-1;
+    System.out.println("MONTH：" + month);
     int intDay = Integer.parseInt(day);
+
+    System.out.println("intYear：" + intYear);
+    System.out.println("intMonth：" + intMonth );
+    System.out.println("intDay：" + intDay);
 
     // Calendarインスタンスを使用して曜日を計算
     Calendar calendar = Calendar.getInstance();
     calendar.set(intYear, intMonth, intDay);
+
 
     // 曜日を取得
     int dayOfweek = calendar.get(Calendar.DAY_OF_WEEK);
@@ -56,6 +62,11 @@ public class KadaiFirstController {
 
     // 結果を返す
     return dayOfweekString;
+    }
+
+    private int Integer(int month) {
+        // TODO 自動生成されたメソッド・スタブ
+        return 0;
     }
 
     @GetMapping("/plus/{val1}/{val2}")
